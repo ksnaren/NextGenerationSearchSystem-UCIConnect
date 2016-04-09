@@ -128,14 +128,6 @@ public class UCIConnectServer extends HttpServlet {
 				JSONArray jsonarray1 = (JSONArray) jsonObject.get("media");
 				mjo[i].id = (String) jsonObject.get("id");
 				JSONObject inner = (JSONObject) jsonarray1.get(0);
-				/*
-				 * JSONObject inner1 = (JSONObject) inner.get("when"); if
-				 * (inner1.get("start_time") != null && inner1.get("end_time")
-				 * != null) { mjo[i].start_time = (String)
-				 * inner1.get("start_time"); mjo[i].end_time = (String)
-				 * inner1.get("end_time"); }
-				 */
-
 				JSONObject inner1 = (JSONObject) inner.get("where");
 				JSONObject inner2 = (JSONObject) inner1.get("geo_location");
 				if (inner2.get("latitude") != null && inner2.get("longitude") != null) {
@@ -145,16 +137,6 @@ public class UCIConnectServer extends HttpServlet {
 					itemLat = 0.0;
 					itemLong = 0.0;
 				}
-
-				/*
-				 * JSONArray jsonarray2 = (JSONArray) inner.get("why");
-				 * JSONObject inner3 = (JSONObject) jsonarray2.get(0); if
-				 * (inner3.get("intent_category_name") != null &&
-				 * inner3.get("intent_name") != null) {
-				 * mjo[i].intent_category_name = (String)
-				 * inner3.get("intent_category_name"); mjo[i].intent_name =
-				 * (String) inner3.get("intent_name"); }
-				 */
 
 				inner1 = (JSONObject) inner.get("media_source");
 				if (inner1.get("default_src") != null)

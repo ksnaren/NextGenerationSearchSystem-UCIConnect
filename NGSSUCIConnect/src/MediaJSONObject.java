@@ -2,17 +2,10 @@ import java.util.Comparator;
 
 public class MediaJSONObject implements Comparator<MediaJSONObject> {
 	public String id = "";
-	//public String start_time = "";
-	//public String end_time = "";
-	//public double latitude = 0.0;
-	//public double longitude = 0.0;
-	//public String intent_category_name = "";
-	//public String intent_name = "";
 	public String caption = "";
 	public String media_source_image = "";
 	public String media_source_audio = "";
 	public String condition = "";
-
 	public double weightCondition = 0.15;
 	public double distanceFromUser = 0.0;
 	public double weightLatest = 0.0;
